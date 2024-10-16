@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info cantiere: lavori Massafra</title>
+    <title>Sito Informativo dei Lavori per il Comune di Massafra</title>
     <style>
         body {
             font-family: 'Helvetica', Arial, sans-serif;
@@ -108,13 +108,53 @@
             height: 480px;
             border: 2px solid #FFC107;
         }
+
+        /* Media Queries per dispositivi mobili */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            nav {
+                flex-direction: column; /* Disposizione verticale del menu */
+            }
+            nav a {
+                padding: 1em;
+                font-size: 1em;
+            }
+            section {
+                padding: 1em;
+            }
+            button {
+                width: 100%;
+            }
+            iframe {
+                height: 300px; /* Riduzione dell'altezza della mappa su dispositivi mobili */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            nav a {
+                font-size: 0.9em;
+                padding: 0.8em;
+            }
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Sito informativo pubblico </h1>
-    <p>per i lavori relativi al comune di Massafra</p>
+    <h1>Sito informativo dei lavori con oggetto...</h1>
+    <p>per il comune di Massafra</p>
 </header>
 
 <nav>
