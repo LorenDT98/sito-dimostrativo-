@@ -37,64 +37,6 @@
             color: #333;
         }
 
-        /* Stili per la Navigazione */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        /* Menu Dropdown */
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav li {
-            position: relative;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.1rem;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #FFC107;
-            color: #333;
-            border-radius: 5px;
-        }
-
-        /* Dropdown Content */
-        nav ul ul {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            top: 100%;
-            left: 0;
-            width: 200px;
-            z-index: 100;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul ul li {
-            width: 100%;
-        }
-
-        nav ul ul a {
-            padding: 10px;
-        }
-
         /* Main content */
         main {
             padding: 20px;
@@ -190,10 +132,6 @@
             header p {
                 font-size: 1rem;
             }
-            nav a {
-                font-size: 1rem;
-                padding: 8px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -202,12 +140,6 @@
             }
             header p {
                 font-size: 0.9rem;
-            }
-            nav ul {
-                flex-direction: column;
-            }
-            nav ul ul {
-                position: static;
             }
         }
 
@@ -222,35 +154,6 @@
     <h1>Sito informativo dei lavori con oggetto...</h1>
     <p>per il comune di Massafra</p>
 </header>
-
-<nav>
-    <ul>
-        <li>
-            <a href="#">Cantieri</a>
-            <ul>
-                <li><a href="#cantieri">Cantieri Attivi</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Orari Cantieri</a>
-            <ul>
-                <li><a href="#orari-cantieri">Orari Probabili</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Bacheca Avvisi</a>
-            <ul>
-                <li><a href="#bacheca-avvisi">Avvisi Importanti</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Reclami</a>
-            <ul>
-                <li><a href="#reclami">Invia un Reclamo</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
 
 <main>
 
@@ -298,8 +201,7 @@
     <section id="mappa">
         <h2>Mappa dei Cantieri e Deviazioni</h2>
         <!-- Mappa di Google My Maps -->
-        <iframe src
-="https://www.google.com/maps/d/embed?mid=1XRW1xQycldyChUJrDUfBP4MPijXyy9U&ehbc=2E312F"></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1XRW1xQycldyChUJrDUfBP4MPijXyy9U&ehbc=2E312F"></iframe>
     </section>
 
     <section id="reclami">
@@ -326,24 +228,6 @@
 <footer>
     <p>Sito informativo dei lavori per il comune di Massafra - 2024</p>
 </footer>
-
-<script>
-    // Funzione per aprire e chiudere i menu a tendina
-    document.querySelectorAll('nav li').forEach(function(menuItem) {
-        menuItem.addEventListener('click', function() {
-            const dropdown = menuItem.querySelector('ul');
-            const isOpen = dropdown.style.display === 'block';
-            
-            // Chiude tutti gli altri menu aperti
-            document.querySelectorAll('nav ul ul').forEach(function(ul) {
-                ul.style.display = 'none';
-            });
-            
-            // Apre o chiude il menu cliccato
-            dropdown.style.display = isOpen ? 'none' : 'block';
-        });
-    });
-</script>
 
 </body>
 </html>
