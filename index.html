@@ -5,69 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sito Informativo dei Lavori per il Comune di Massafra</title>
     <style>
+        /* Font e Stili di Base */
         body {
-            font-family: 'Helvetica', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            line-height: 1.6;
         }
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Stili per Header */
         header {
-            background-color: #FFC107; /* Giallo da cantiere */
-            color: black;
+            background-color: #FFC107;
+            color: white;
             text-align: center;
-            padding: 2em 0;
+            padding: 50px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         header p {
-            font-size: 1.2em;
+            font-size: 1.2rem;
+            color: #333;
         }
+
+        /* Stili per la Navigazione */
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             background-color: #333;
-            padding: 1em 0;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
             color: white;
-            padding: 1em 2em;
             text-decoration: none;
-            text-align: center;
-            font-size: 1.2em;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
         }
         nav a:hover {
             background-color: #FFC107;
-            color: black;
+            color: #333;
+            border-radius: 5px;
         }
+
+        /* Stili per il Main */
         main {
-            padding: 2em;
-            max-width: 1200px;
+            padding: 20px;
+            max-width: 1000px;
             margin: auto;
         }
         section {
-            margin-bottom: 2em;
+            margin-bottom: 40px;
         }
         section h2 {
+            text-align: center;
             background-color: #FFC107;
-            padding: 10px;
-            text-align: center;
-            color: black;
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            text-transform: uppercase;
         }
-        footer {
+        section p {
             text-align: center;
-            padding: 2em;
-            background-color: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            font-size: 1rem;
         }
+
+        /* Stili per Tabelle */
         #orari-cantieri table {
             width: 100%;
             border-collapse: collapse;
-            margin: 0 auto;
+            margin: 20px 0;
         }
         #orari-cantieri table, th, td {
             border: 2px solid #FFC107;
@@ -76,79 +95,98 @@
             padding: 15px;
             text-align: center;
             background-color: #fff;
+            font-size: 1rem;
         }
+
+        /* Stili per la Mappa */
+        #mappa iframe {
+            width: 100%;
+            height: 350px;
+            border: 3px solid #FFC107;
+            border-radius: 10px;
+        }
+
+        /* Stili per il Form */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .form-group label {
             display: block;
             font-weight: bold;
+            margin-bottom: 5px;
         }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 12px;
-            margin-top: 5px;
+            padding: 15px;
             border: 2px solid #FFC107;
             border-radius: 5px;
-            font-size: 1em;
+            font-size: 1rem;
         }
         button {
-            padding: 10px 20px;
+            width: 100%;
+            padding: 15px;
             background-color: #FFC107;
-            color: black;
             border: none;
+            color: white;
+            font-size: 1.2rem;
             cursor: pointer;
-            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #ffb300;
-        }
-        #mappa iframe {
-            width: 100%;
-            height: 480px;
-            border: 2px solid #FFC107;
+            background-color: #ff9800;
         }
 
-        /* Media Queries per dispositivi mobili */
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Media Queries - Tablet e Smartphone */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 1.8rem;
             }
             header p {
-                font-size: 1em;
-            }
-            nav {
-                flex-direction: column; /* Disposizione verticale del menu */
+                font-size: 1rem;
             }
             nav a {
-                padding: 1em;
-                font-size: 1em;
-            }
-            section {
-                padding: 1em;
-            }
-            button {
-                width: 100%;
-            }
-            iframe {
-                height: 300px; /* Riduzione dell'altezza della mappa su dispositivi mobili */
+                font-size: 1rem;
+                padding: 8px;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.5rem;
             }
             header p {
-                font-size: 0.9em;
+                font-size: 0.9rem;
+            }
+            nav {
+                flex-direction: column;
             }
             nav a {
-                font-size: 0.9em;
-                padding: 0.8em;
+                padding: 15px 0;
+                font-size: 1rem;
+                text-align: center;
+            }
+            #mappa iframe {
+                height: 300px;
+            }
+            button {
+                font-size: 1rem;
             }
         }
 
     </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -228,7 +266,8 @@
                 <label for="messaggio">Messaggio:</label>
                 <textarea id="messaggio" name="messaggio" rows="4" placeholder="Descrivi il problema"></textarea>
             </div>
-            <button type="submit">Invia Reclamo</button>
+            <button type="
+submit">Invia Reclamo</button>
         </form>
     </section>
 
